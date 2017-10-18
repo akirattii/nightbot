@@ -1,0 +1,22 @@
+{
+  "name": "nightbot",
+  "version": "1.0.0",
+  "description": "A Simple Helper Library for Nightmare",
+  "private": false,
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["nightmare", "scraping"],
+  "author": "Akira Tanaka <tanaka.akira.2006@gmail.com> (https://github.com/akirattii)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/akirattii/nightbot.git"
+  },
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "jsdom": "^11.3.0",
+    "nightmare": "^2.10.0"
+  }
+}
