@@ -1,6 +1,6 @@
 {
   "name": "nightbot",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A Simple Helper Library for Nightmare",
   "private": false,
   "main": "lib/index.js",

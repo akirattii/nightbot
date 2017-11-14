@@ -1,6 +1,6 @@
 ## Nightbot
 
-A Simple Helper Library for [Nightmare](https://github.com/segmentio/nightmare).
+A simple web scraping library using [Nightmare](https://github.com/segmentio/nightmare).
 
 ## Install
 
