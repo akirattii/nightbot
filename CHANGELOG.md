@@ -1,5 +1,8 @@
 # nightbot changelog
 
+## 1.1.1 - 2018-07-13
+- fix: UnhandledPromiseRejectionWarning error handling bug
+
 ## 1.1.0 - 2018-07-13
 - async/await available
 - nightmare version up to v3.0.1

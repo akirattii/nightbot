@@ -26,12 +26,20 @@ const program = [
 // a selector of target you want to get:
 const selector = "h2.result__title";
 
+const nightmareOptions = {
+  // show: true,
+  // webPreferences: {
+  //   images: false,
+  // }
+};
+
 // Execute!
 nightbot.execute({
   program,
   selector,
+  nightmareOptions,
 }, (err, elements) => {
   console.log("callback result ***************");
-  console.log("err:", err);
+  if (err) return console.log("err:", err);
   console.log("elements[0].querySelector('b').innerHTML:", elements[0].querySelector("b").innerHTML);
 });
