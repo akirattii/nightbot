@@ -1,5 +1,8 @@
 # nightbot changelog
 
+## 1.2.0 - 2018-12-28
+- feature: Add `keepInstance` option to reuse the same nightmare instance
+
 ## 1.1.1 - 2018-07-13
 - fix: UnhandledPromiseRejectionWarning error handling bug
 

@@ -81,7 +81,63 @@ run().catch((err) => {
 });
 ```
 
-More examples? Please check here: `example/`.
+Reuses the same `nightmare` instance to make the browser open process faster on loop exection:
+```javascript
+...
+
+const ite = function*() {
+  for (let len = 2, i = 0; i < len; i++) {
+    // Execute!
+    yield nightbot.execute({
+      program,
+      selector,
+      nightmareOptions,
+      newInstance: false,
+      keepInstance: true, // NOTE: reuses the same instance
+    }, (err, elements) => {
+      console.log(`[${i}] callback result ***************`);
+      if (err) return console.log("err:", err);
+      console.log(`[${i}] elements[0].querySelector('b').innerHTML:`, elements[0].querySelector("b").innerHTML);
+      ite.next();
+    });
+  }
+  // finish!
+  nightbot.end((err) => {
+    console.log("finished!");
+  });
+}();
+ite.next(); // fire!
+```
+
+async/await also available:
+```javascript
+...
+
+async function run() {
+  console.log("async/await executing ...");
+  for (let len = 2, i = 0; i < len; i++) {
+    // Execute!
+    const elements = await nightbot.execute({
+      program,
+      selector,
+      nightmareOptions,
+      newInstance: false,
+      keepInstance: true, // NOTE: reuses the same instance
+    });
+    console.log(`[${i}] async/await result ***************`);
+    console.log(`[${i}] elements[0].querySelector('b').innerHTML:`, elements[0].querySelector("b").innerHTML);
+  }
+  // finish!
+  await nightbot.end();
+  console.log("finished!");
+}
+
+run().catch((err) => {
+  console.log("result error:", err);
+});
+```
+
+More examples? Please check [examples](./example/).
 
 
 
